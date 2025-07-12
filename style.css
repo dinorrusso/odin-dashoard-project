@@ -1,0 +1,338 @@
+html,
+body {
+  /* height: 100%; */
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.ui-container {
+  display: grid;
+  grid-template-columns: 350px minmax(500px, 1fr); /* Sidebar + main content */
+  height: 100vh;
+}
+.side-bar {
+  grid-column: 1;
+  grid-row: 1;
+  background: #1992d4;
+  color: #fff;
+  /* height: 100%; Full viewport height */
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+.nav-title {
+  display: grid;
+  grid-template-columns: 64px 1fr; /* Icon + text */
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  font-size: 3em;
+}
+.logo {
+  display: grid;
+  place-items: center;
+  /* font-size: 1.5em; */
+}
+.nav-item {
+  display: grid;
+  grid-template-columns: 64px 1fr; /* Icon + text */
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.spacer {
+  display: grid;
+  min-height: 24px;
+  grid-template-columns: 64px 1fr; /* Icon + text */
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+
+.nav-item:hover {
+  background: #333;
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  font-size: 1em;
+}
+
+.text {
+  font-size: 1em;
+}
+
+.main {
+  grid-column: 2;
+  grid-row: 1;
+  background: #e2e8f0;
+  color: #000;
+  display: grid;
+  grid-template-rows: 72px 72px 1fr;
+}
+.head {
+  display: grid;
+}
+.head1,
+.head2 {
+  background: white;
+  display: grid;
+  grid-template-columns: 36px 2fr 2fr;
+  padding: 8px 16px;
+  align-items: center;
+}
+.head1-rt {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: end;
+  padding-left: 24px;
+  align-items: center;
+}
+
+.head2 {
+  grid-template-columns: 64px 2fr 3fr;
+  box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+input[type="search"] {
+  border-radius: 15px; /* Rounded corners */
+  border-width: 0px;
+  background-color: #e2e8f0; /* Custom background color */
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  outline: none;
+  width: 100%; /* Fills the grid cell */
+  min-width: 0; /* Prevents overflow */
+  box-sizing: border-box;
+}
+/* #avatar1 {
+  margin-left: 24px;
+} */
+#name {
+  margin-left: 24px;
+  font-weight: 700;
+  line-height: 1.5em;
+}
+#avatar1 {
+  margin-left: 24px;
+}
+#greeting,
+#identity {
+  display: block;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+}
+#greeting {
+  font-size: 0.8em;
+  font-weight: 800;
+}
+#identity {
+  font-size: 1.3em;
+  font-weight: 800;
+}
+.buttons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: end;
+  gap: 20px;
+  padding-right: 24px;
+  align-items: center;
+}
+button {
+  background-color: #1992d4;
+  border-radius: 15px;
+  color: white;
+  border: none;
+  width: 100px;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 5px;
+}
+/* main area  */
+.main-content-grid {
+  display: grid;
+  /* This creates columns that are at least 350px wide.
+      If there's enough space for two, they will be created and be equal width.
+      If not, they will stack into a single column. */
+  /* grid-template-columns: repeat(auto-fit, minmax(350px, .5fr)); */
+  grid-template-columns: 2fr 1fr;
+  gap: 24px; /* Space between main grid sections */
+  overflow-y: auto;
+}
+.projects-section {
+  margin-left: 1rem;
+}
+.projects-grid {
+   display: grid;
+  /* This creates columns for project cards. Each card will be at least 300px wide.
+      They will automatically create as many columns as fit, and stack if only one fits. */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px; /* Space between project cards */
+  padding-bottom: 24px;
+
+}
+.project-card {
+  box-sizing: border-box;
+  background-color: white;
+  padding: 24px; /* p-6 */
+  border-radius: 8px; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+  border-left: 8px solid #facc15; 
+  display: grid; /* Grid for content and actions within the card */
+  grid-template-rows: 1fr auto; /* Content takes space, actions stick to bottom */
+  gap: 16px; /* Space between content and actions */
+  
+}
+
+.project-card h3 {
+  font-size: 20px; 
+  font-weight: 600; 
+  color: #1f2937;
+  margin-bottom: 0;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.project-card p {
+  color: #4b5563;
+  font-size: 14px;
+  margin-top: 4px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.project-card-actions {
+      display: grid; /* Grid for action buttons */
+      grid-template-columns: 50px 50px 50px;
+      justify-content: end; /* Push to the right */
+  }
+
+    .project-card-actions button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        color: inherit; /* Inherit color from parent */
+        transition: color 0.2s ease-in-out;
+    }
+
+    .project-card-actions button:hover {
+        color: #3b82f6; /* hover:text-blue-500 */
+    }
+
+.news-section {
+  /* margin-left: 1rem; */
+}
+.news-grid {
+  display: grid; /* Grid to stack the two cards vertically */
+  grid-template-rows: auto auto; /* Each card takes auto height */
+  /* gap: 24px; Space between the two cards */
+  margin-right: 2rem;
+}
+
+.announcements-card {
+    background-color: white;
+    padding: 12px; /* p-6 */
+    border-radius: 8px; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1); /* shadow-md */
+}
+
+.announcements-card h2 {
+    font-size: 24px; /* text-2xl */
+    font-weight: bold;
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 16px; /* mb-4 */
+}
+
+.announcements-card .announcement-list {
+    display: grid; /* Grid to stack announcement items */
+    grid-template-rows: auto;
+}
+
+.announcements-card .announcement-item {
+    
+    padding-bottom: 5px; /* py-3 */
+    border-bottom: 1px solid #e5e7eb; /* part of divide-y */
+}
+
+.announcements-card .announcement-item:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.announcements-card .announcement-item h3 {
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+    margin-bottom: 4px; /* mb-1 */
+}
+
+.announcements-card .announcement-item p {
+  margin-top: 0;
+    color: #4b5563; /* text-gray-600 */
+    font-size: 14px; /* text-sm */
+}
+.trending-list {
+      display: grid; /* Grid to stack trending items */
+      grid-template-rows: auto;
+      /* gap: 5px; Space between trending items */
+  }
+
+.trending-item {
+  display: grid; /* Grid for avatar and text */
+  grid-template-columns: auto 1fr; /* Avatar fixed, text takes rest */
+  align-items: center;
+  gap: 12px; 
+}
+
+ .trending-item img {
+    width: 40px; /* w-10 */
+    height: 40px; /* h-10 */
+    border-radius: 9999px; /* rounded-full */
+  }
+
+ .trending-item .at-name {
+    font-weight: 600; /* font-semibold */
+    color: #1f2937; /* text-gray-800 */
+}
+ .trending-item .at-project {
+        font-weight: 600; /* font-semibold */
+        color: #1f2937; /* text-gray-800 */
+    }
+
+.announcement {
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: .75em;
+  font-weight: 100
+}
+.trending-card {
+  background-color: white;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  }
+
+.trending-item{
+  display: grid; /* Grid for avatar and text */
+  grid-template-columns: auto 1fr; /* Avatar fixed, text takes rest */
+  align-items: center;
+  gap: 12px; /* Space between avatar and text */
+  font-size: .75em;
+  font-weight: 100;
+  
+}
+.trending-item .username {
+        font-weight: 600; /* font-semibold */
+        color: #1f2937; /* text-gray-800 */
+    }
+
+.trending-item .description {
+    color: #4b5563; /* text-gray-600 */
+    font-size: 14px; /* text-sm */
+    margin-top: -10px;
+}
