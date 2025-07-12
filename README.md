@@ -43,3 +43,6 @@ Before you move on, we would love it if you could submit your feedback on the In
 I feel as though I accomplished the objective.  The HTML/CSS is not a fully responsive design - we have not done media queries yet - (but I would say it behaves pretty well on the desktop and some tablet devices.)
 
 Onward and upward!
+
+
+**NOTE: When I published the site on github pages the images BROKE! Not sure why - I'll look into it later.**
