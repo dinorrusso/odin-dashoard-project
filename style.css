@@ -95,7 +95,7 @@ body {
 }
 
 .head2 {
-  grid-template-columns: 64px 2fr 3fr;
+  grid-template-columns: 64px minmax(185px, 2fr) minmax(340px, 3fr);
   box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 input[type="search"] {
@@ -132,7 +132,7 @@ input[type="search"] {
   font-weight: 800;
 }
 #identity {
-  font-size: 1.3em;
+  font-size: 1.1em;
   font-weight: 800;
 }
 .buttons {
@@ -140,7 +140,6 @@ input[type="search"] {
   grid-template-columns: auto auto auto;
   justify-content: end;
   gap: 20px;
-  padding-right: 24px;
   align-items: center;
 }
 button {
@@ -166,6 +165,10 @@ button {
 }
 .projects-section {
   margin-left: 1rem;
+}
+
+.projects-section h2 {
+  margin-bottom: 5px;
 }
 .projects-grid {
    display: grid;
@@ -225,8 +228,8 @@ button {
         color: #3b82f6; /* hover:text-blue-500 */
     }
 
-.news-section {
-  /* margin-left: 1rem; */
+.news-section h2{
+  margin-bottom: 5px;
 }
 .news-grid {
   display: grid; /* Grid to stack the two cards vertically */
